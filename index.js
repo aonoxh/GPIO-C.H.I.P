@@ -2,6 +2,10 @@
 var exec = require('child_process').execSync;
 
 module.exports = {
+
+	IN : "in",
+	OUT : "out",
+
 	exportAll(){
 		for(var i = 0; i <= 7; i++){
 			exec('echo ' + i + " > /sys/class/gpio/export");
@@ -39,7 +43,7 @@ module.exports = {
 
 
 class GPIO{
-	constructor(number, state, direction){
+	constructor(number, direction){
 		this.id = number;
 		this.state = state;
 		this.direction = direction;
