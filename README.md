@@ -3,7 +3,7 @@
 How to use
 
 ```javascript
-var GPIO = require('./index');
+var GPIO = require('GPIO-C.H.I.P');
 
 GPIO.exportAll();
 ```
