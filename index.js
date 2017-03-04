@@ -40,19 +40,17 @@ module.exports.isChip = function(){
 	return (exec('cat /proc/meminfo').split()[0] > 380) ? true : false;
 };
 
-var Gpio = class Gpio{
-	constructor(number, direction){
-		this.id = number;
-		this.direction = direction;
-	}
+var Gpio = function Gpio(number, direction){
+	this.id = number;
+	this.direction = direction;
+}
 
-	on(){
-		module.exports.write(this.id, 1);
-	}
+Gpio.prototype.on = function(){
+	module.exports.write(this.id, 1);
+}
 
-	off(){
-		module.exports.write(this.id, 0);
-	}
-};
+Gpio.prototype.off = function(){
+	module.exports.write(this.id, 0);
+}
 
 module.exports.Gpio = Gpio;
