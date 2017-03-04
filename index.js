@@ -41,11 +41,19 @@ module.exports = {
 	}
 }
 
-
-class GPIO{
+var Gpio = class Gpio{
 	constructor(number, direction){
 		this.id = number;
-		this.state = state;
 		this.direction = direction;
 	}
-}
+
+	on(){
+		module.exports.write(this.id, 1);
+	}
+
+	off(){
+		module.exports.write(this.id, 0);
+	}
+};
+
+module.exports.Gpio = Gpio;

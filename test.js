@@ -2,4 +2,6 @@ var GPIO = require('./index');
 
 //GPIO.exportAll();
 
-console.log(GPIO.IN);
+var led = new GPIO.Gpio(0, GPIO.IN);
+
+//console.log(GPIO.IN);
