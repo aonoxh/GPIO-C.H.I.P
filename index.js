@@ -38,10 +38,10 @@ module.exports = {
 }
 
 
-/*class GPIO{
-	constructor(number, state){
+class GPIO{
+	constructor(number, state, direction){
 		this.id = number;
 		this.state = state;
+		this.direction = direction;
 	}
 }
-*/
