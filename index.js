@@ -28,8 +28,10 @@ module.exports.exportAll = function(){
 
 module.exports.export = function(id){
 	if(module.exports.isChip()){
-		fs.writeFileSync("/sys/class/gpio/export", MAP[id]);
-	}	
+		if(!module.exports.isExported(id)){
+			fs.writeFileSync("/sys/class/gpio/export", MAP[id]);
+		}		
+	}
 };
 
 module.exports.unexportAll = function(){
@@ -44,7 +46,9 @@ module.exports.unexportAll = function(){
 
 module.exports.unexport = function(id){
 	if(module.exports.isChip()){
-		fs.writeFileSync("/sys/class/gpio/unexport", MAP[id]);
+		if(!module.exports.isExported(id)){
+			fs.writeFileSync("/sys/class/gpio/unexport", MAP[id]);
+		}
 	}	
 };
 
