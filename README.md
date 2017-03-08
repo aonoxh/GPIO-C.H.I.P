@@ -58,7 +58,7 @@ if(GPIO.isChip()){
 }
 ```
 
-Objects ```new Gpio(gpio_port, direction)```
+Objects ```new GPIO.Gpio(gpio_port, direction)```
 ```javascript
 var led = new Gpio(4, GPIO.OUT);
 led.off(); // Value = 0;
