@@ -1,5 +1,5 @@
 {
-	"version": "0.0.11a",
+	"version": "0.0.14a",
 	"name" : "gpio-c.h.i.p",
 	"description" : "Simple libray for C.H.I.P $9 Dollars"
 }

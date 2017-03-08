@@ -66,17 +66,6 @@ module.exports.read = function(id){
 	}
 };
 
-module.exports.write = function(id, state){
-	if(module.exports.isChip()){
-		if(!module.exports.isExported(id)){
-			module.exports.export(id);
-		}
-		if(state == 0 || state == 1){
-			fs.writeFileSync('/sys/class/gpio/gpio' + MAP[id] + "/value", state);
-		}
-	}	
-};
-
 module.exports.write = function(id, state, direction){
 	if(module.exports.isChip()){
 		if(!module.exports.isExported(id)){

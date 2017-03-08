@@ -29,11 +29,6 @@ var value = GPIO.read(0);
 console.log(value);
 ```
 
-Use ```GPIO.write(gpio_port, state)```
-```javascript
-GPIO.write(4, 0);
-```
-
 Use ```GPIO.write(gpio_port, state, direction)```
 ```javascript
 GPIO.write(4, 1, GPIO.IN | GPIO.OUT);
@@ -54,7 +49,7 @@ if(GPIO.isExported(4)){
 Use ```GPIO.isChip()```
 ```javascript
 if(GPIO.isChip()){
-	console.log("Í´m better than RPI");
+	console.log("I´m better than RPI");
 }
 ```
 
