@@ -1,9 +1,13 @@
-# GPIO-C.H.I.P
+# GPIO-C.H.I.P 
 
 How to use
 
 ```javascript
+<<<<<<< HEAD
 var GPIO = require('gpio-c.h.i.p');
+=======
+var GPIO = require('GPIO-C.H.I.P');
+>>>>>>> origin/master
 
 GPIO.exportAll();
 
