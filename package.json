@@ -1,5 +1,17 @@
 {
-	"version": "0.0.16a",
+	"version": "0.1.0",
 	"name" : "gpio-c.h.i.p",
-	"description" : "Simple libray for C.H.I.P $9 Dollars"
+	"description" : "Simple libray for C.H.I.P $9 Dollars",
+	"keywords": [
+		"node",
+		"c.h.i.p",
+		"chip",
+		"gpio",
+		"gpio-c.h.i.p"
+	],
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/aonoxh/gpio-c.h.i.p.git"
+  	}
 }
