@@ -72,7 +72,6 @@ module.exports.write = function(id, state){
 			module.exports.export(id);
 		}
 		if(state == 0 || state == 1){
-			module.exports.direction(id, "out");
 			fs.writeFileSync('/sys/class/gpio/gpio' + MAP[id] + "/value", state);
 		}
 	}	
@@ -113,11 +112,15 @@ var Gpio = function Gpio(number, direction){
 }
 
 Gpio.prototype.on = function(){
-	module.exports.write(this.id, 1);
+	module.exports.write(this.id, 1, direction);
 }
 
 Gpio.prototype.off = function(){
-	module.exports.write(this.id, 0);
+	module.exports.write(this.id, 0, direction);
+}
+
+Gpio.prototype.read = function(){
+	return module.exports.read(this.id);
 }
 
 module.exports.Gpio = Gpio;
