@@ -18,9 +18,9 @@ module.exports = {
 
 module.exports.exportAll = function(){
 	if(module.exports.isChip()){
-		for(var i = 0; i <= MAP.length; i++){
-			if(!module.exports.isExported(MAP[i])){
-				module.exports.export(MAP[i]);
+		for(var i = 0; i <= 7; i++){
+			if(!module.exports.isExported(i)){
+				module.exports.export(i);
 			}
 		}
 	}
@@ -35,8 +35,8 @@ module.exports.export = function(id){
 module.exports.unexportAll = function(){
 	if(module.exports.isChip()){
 		for(var i = 0; i <= 7; i++){
-			if(module.exports.isExported(MAP[i])){
-				module.exports.unexport(MAP[i]);
+			if(module.exports.isExported(i)){
+				module.exports.unexport(i);
 			}
 		}
 	}	
@@ -108,15 +108,15 @@ module.exports.isChip = function(){
 var Gpio = function Gpio(number, direction){
 	this.id = number;
 	this.direction = direction;
-	module.exports.export(number);
+	module.exports.export(this.id);
 }
 
 Gpio.prototype.on = function(){
-	module.exports.write(this.id, 1, direction);
+	module.exports.write(this.id, 1, this.direction);
 }
 
 Gpio.prototype.off = function(){
-	module.exports.write(this.id, 0, direction);
+	module.exports.write(this.id, 0, this.direction);
 }
 
 Gpio.prototype.read = function(){
