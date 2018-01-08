@@ -72,7 +72,7 @@ module.exports.read = (pin) => {
 	}
 }
 
-module.exports.write = (pin, value) => {
+module.exports.write = (pin, value, direction) => {
 	if(module.exports.isChip()){
 		if(module.exports.isExported(pin)){
 			module.exports.direction(pin, direction);
