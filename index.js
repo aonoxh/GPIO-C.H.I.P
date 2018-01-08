@@ -120,7 +120,8 @@ module.exports.isExported = (pin) => {
 }
 
 module.exports.isChip = () => {
-	return (os.release().startsWith("4.4.13-ntc-mlc")) ? true : false;
+	return (os.arch().startsWith('arm'))
+	&& fs.existsSync('/sys/class/gpio');
 }
 
 /* GPIO CLASS*/
